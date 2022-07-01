@@ -67,10 +67,7 @@ export const Home = () => {
 	}, [q]);
 
     useEffect(() => {
-		const movieFavorites = JSON.parse(
-			localStorage.getItem('react-movie-app-favorites')
-		);
-
+		const movieFavorites = JSON.parse(localStorage.getItem('react-movie-app-favorites')|| "");
 		dispatch(addMoviesFavorite((movieFavorites)));
 	}, []);
 
