@@ -147,7 +147,7 @@ export const Home = () => {
 
     return (
 		<div>
-            {isLoading ? movieRender : <LoadingSpinner />}
+            
         </div>
 	);
 };
