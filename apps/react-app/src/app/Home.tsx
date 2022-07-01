@@ -5,7 +5,7 @@ import { getMoviesFavorite, getMoviesLoading } from "./store/slice";
 import {Dialog, DialogContent, Popover, Button, Box } from '@material-ui/core';
 import MovieList from './movieList';
 import FavoriteList from './favoriteList';
-import SearchBox from './SearchBox';
+import SearchBox from './searchBox';
 import Favorites from './favorites';
 import RemoveFavorites from './removeFavorites';
 import MovieDetails from './movieDetails';
