@@ -14,8 +14,8 @@ import '../app.scss';
 import LoadingSpinner from "../loading/loading";
 
 export const Home = () => {
-  const [q, setQuery] = useState('');
-  const [open, setOpen] = useState(false);
+  const [q, setQuery] = useState<HTMLButtonElement | ''>('');
+  const [open, setOpen] = useState<HTMLButtonElement | boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const openPop = Boolean(anchorEl);
   const id = openPop ? 'simple-popover' : '';
