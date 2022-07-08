@@ -2,17 +2,17 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import Button from '@material-ui/core/Button';
 import {Grid} from '@material-ui/core';
-import "./app.scss";
-import { getMoviesFavorite } from "./store/slice";
+import "../app.scss";
+import { getAllMovies } from "../store/slice";
 
 
-const FavoriteList = (props: any) => {
+const MovieList = (props: any) => {
 	const FavoritesComponent = props.favoritesComponent;
-	const favorite = useSelector(getMoviesFavorite);
+	const movies = useSelector(getAllMovies);
 	const { handleFavoritesClick, handleIdClick, handleOpen } = props;
 	return (
 		<Grid container direction="row" justifyContent="center" spacing={3}>
-			{favorite.map((movie: any, index: any) => (
+			{movies.map((movie: any, index: any) => (
 				<Grid item xs={12} md={4} key={index}>
 					<div><img src={movie.Poster} alt='movie'/></div>
                     <div><h4>{movie.Title}</h4></div>
@@ -38,4 +38,4 @@ const FavoriteList = (props: any) => {
 	);
 };
 
-export default FavoriteList;
+export default MovieList;

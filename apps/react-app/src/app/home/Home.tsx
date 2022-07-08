@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addMovies,  addMoviesDetails, addMoviesFavorite, addMoviesLoading } from './store/slice';
-import { getMoviesFavorite, getMoviesLoading } from "./store/slice";
+import { addMovies,  addMoviesDetails, addMoviesFavorite, addMoviesLoading } from '../store/slice';
+import { getMoviesFavorite, getMoviesLoading } from "../store/slice";
 import {Dialog, DialogContent, Popover, Button, Box } from '@material-ui/core';
-import MovieList from './movieList';
-import FavoriteList from './favoriteList';
-import SearchBox from './searchBox';
-import Favorites from './favorites';
-import RemoveFavorites from './removeFavorites';
-import MovieDetails from './movieDetails';
+import MovieList from '../movies/movieList';
+import FavoriteList from '../favorites/favoriteList';
+import SearchBox from '../search/searchBox';
+import Favorites from '../favorites/favorites';
+import RemoveFavorites from '../favorites/removeFavorites';
+import MovieDetails from '../movies/movieDetails';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import './app.scss';
-import LoadingSpinner from "./loading/loading";
+import '../app.scss';
+import LoadingSpinner from "../loading/loading";
 
 export const Home = () => {
   const [q, setQuery] = useState('');
