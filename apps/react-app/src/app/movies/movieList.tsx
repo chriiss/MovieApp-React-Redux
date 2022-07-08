@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import {Grid} from '@material-ui/core';
 import "../app.scss";
 import { getAllMovies } from "../store/slice";
-
+import IMovieList from '../Interface/IMovieList';
 
 const MovieList = (props: any) => {
 	const FavoritesComponent = props.favoritesComponent;
@@ -12,7 +12,7 @@ const MovieList = (props: any) => {
 	const { handleFavoritesClick, handleIdClick, handleOpen } = props;
 	return (
 		<Grid container direction="row" justifyContent="center" spacing={3}>
-			{movies.map((movie: any, index: any) => (
+			{movies.map((movie: IMovieList, index: number) => (
 				<Grid item xs={12} md={4} key={index}>
 					<div><img src={movie.Poster} alt='movie'/></div>
                     <div><h4>{movie.Title}</h4></div>

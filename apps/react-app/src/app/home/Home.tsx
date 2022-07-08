@@ -13,9 +13,9 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import '../app.scss';
 import LoadingSpinner from "../loading/loading";
 
-export const Home = () => {
-  const [q, setQuery] = useState<HTMLButtonElement | ''>('');
-  const [open, setOpen] = useState<HTMLButtonElement | boolean>(false);
+export const Home = ()  => {
+  const [q, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const openPop = Boolean(anchorEl);
   const id = openPop ? 'simple-popover' : '';
@@ -28,7 +28,7 @@ export const Home = () => {
   const isLoading = useSelector(getMoviesLoading);
 
 
-    const getMovie = async(q: any) => {
+    const getMovie = async(q: string) => {
         dispatch(addMoviesLoading(true));
         const result = await fetch(`http://www.omdbapi.com/?s=${q}&apikey=${api_key}`,{
         method: "GET",
@@ -45,7 +45,7 @@ export const Home = () => {
 		}
     }
 
-    const getMovieDetail = async(id: any) => {
+    const getMovieDetail = async(id: string) => {
         dispatch(addMoviesLoading(true));
         const result = await fetch(`http://www.omdbapi.com/?t=${id}&apikey=${api_key}`,{
         method: "GET",
@@ -71,12 +71,12 @@ export const Home = () => {
 		dispatch(addMoviesFavorite((movieFavorites)));
 	}, []);
 
-	const saveToLocalStorage = (items: any) => {
+	const saveToLocalStorage = (items: Array<any>) => {
 		localStorage.setItem('react-movie-app-favorites', JSON.stringify(items));
 	};
 
-	const addFavoriteMovie = (movie: any) => {
-		const newFavoriteList: any[] = [...favorite, movie];
+	const addFavoriteMovie = (movie: string) => {
+		const newFavoriteList: Array<any> = [...favorite, movie];
 		dispatch(addMoviesFavorite((newFavoriteList)));
 		saveToLocalStorage(newFavoriteList);
 	};
