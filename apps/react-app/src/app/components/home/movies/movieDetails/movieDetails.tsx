@@ -2,9 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
-import "../app.scss";
-import { getMoviesDetails } from "../store/slice";
-import IMovieDetails from "../Interface/IMovieDetails";
+import "../../../../app.scss";
+import { getMoviesDetails } from "../../../../store/slice";
+import IMovieDetails from "../../../../interface/IMovieDetails";
 
 const MovieDetails = (props: any) => {
     const details: IMovieDetails = useSelector(getMoviesDetails);

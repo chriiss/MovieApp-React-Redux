@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import Button from '@material-ui/core/Button';
 import {Grid} from '@material-ui/core';
-import "../app.scss";
-import { getMoviesFavorite } from "../store/slice";
-import IMovieList from '../Interface/IMovieList';
+import "../../../app.scss";
+import { getMoviesFavorite } from "../../../store/slice";
+import IMovieList from '../../../interface/IMovieList';
 
 
 const FavoriteList = (props: any) => {
